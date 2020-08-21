@@ -33,10 +33,12 @@ img {
 }
 .social-link {
   margin-left: 20px;
+
 }
 .social-link:first-child {
   margin-left: 0;
 }
+
 .hero-subtitle {
   font-size: 24px;
   line-height: 28px;
@@ -84,7 +86,12 @@ img {
   line-height: 14px;
   text-transform: uppercase;
   color: #2E2E30;
-  
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.button:hover {
+  background: #FFBB01;
 }
 .hero-avatar {
   width: 389px;
@@ -95,7 +102,7 @@ img {
   background-repeat: no-repeat;
   background-position: center top -10px;
   border: 13px solid #FFBB01;
-
+  flex-shrink: 0;
 }
 
 /* features*/
@@ -139,6 +146,7 @@ img {
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  padding: 0 10px;
 }
 .project-text {
   flex-basis: 60%;
@@ -178,7 +186,9 @@ img {
 }
 .project-icon {
   margin-right: 16px;
+
 }
+
 .project-pagination {
   display: flex;
   align-items: center;
@@ -196,6 +206,14 @@ img {
 }
 .project-bullet-active {
   background-color: #ffbb01;
+}
+.project-image {
+  width: 300px;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 /*contacts*/
@@ -223,6 +241,7 @@ img {
   padding: 18px 20px;
   width: 100%;
   padding-left: 50px;
+  outline: none;
 }
 .input-name {
   margin-bottom: 17px;
