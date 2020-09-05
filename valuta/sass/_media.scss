@@ -1,0 +1,414 @@
+@media (max-width: 1243px) {
+	.mainscreen__currency_button {
+		flex-basis: 100%;
+		display: flex;
+		justify-content: center;
+	}
+	.mainscreen__currency {
+		padding: 80px;
+	}
+	.button__exchange {
+		margin: 56px 0 0 0;
+	}
+	
+}
+
+
+@media (max-width: 1024px) {
+	.mainscreen__currency {
+		flex-wrap: wrap;
+	}
+	.mainscreen__currency_give {
+		flex-wrap: wrap;
+	}
+	.mainscreen__wrap {
+		flex-basis: 45%;
+		flex-wrap: wrap;
+	}
+	.mainscreen__currency_button {
+		flex-basis: 100%;
+		display: flex;
+		justify-content: center;
+}
+	.mainscreen__wrap {
+		flex-basis: 37%;
+	}
+	.button__exchange {
+		margin-top: 55px;
+	}
+	.mainscreen__title {
+		font-size: 46px;
+		line-height: 61px;
+	}
+	.mainscreen__subtitle {
+		font-size: 16px;
+		line-height: 19px;
+	}
+	.mainscreen__currency_arrow {
+			flex-basis: 0;
+	}
+	.service__image {
+		max-width: 50%;
+		img{
+			width: 90%;
+		}
+	}
+	.end__title {
+    font-size: 28px;
+		line-height: 40px;
+	} 
+
+	.footer__menu_link {
+		margin: 0 5px;
+	}
+	.footer__social_link {
+		margin-right: 18px;
+	}
+}
+@media (max-width: 984px) {
+	.header__nav {
+		flex-wrap: wrap;
+	}
+	.header__logo {
+		margin: 0;
+	}
+	.header__menu_link {
+		margin-right: 37px;
+	}
+	.header__menu {
+		margin-left: 30px;
+		margin-right: 14px;
+	}
+	.header__logo {
+		margin-bottom: 0;
+	}
+	.header__buttons {
+		margin-top: 10px;
+		display: flex;
+		flex-basis: 100%;
+		justify-content: flex-end;
+	}
+	.mainscreen__currency {
+		flex-wrap: wrap;
+	}
+	.mainscreen__currency_arrow {
+		
+		flex-basis: 0;
+	}
+	.mainscreen__wrap {
+		flex-basis: 37%;
+		display: block;
+	}
+	.features__text {
+		font-size: 16px;
+		line-height: 143%;
+	}
+	.features__title {
+		font-size: 18px;
+	}
+	.reserve__block {
+		flex-basis: 25%;
+	}
+	.reserve__descr {
+		font-size: 14px;
+	}
+	.reserve__count {
+		font-size: 17px;
+	}
+	.service__wrap {
+		flex-direction: column-reverse;
+	}
+	.service__text {
+		width: 100%;
+		text-align: center;
+	}
+	
+	
+}
+@media (max-width: 842px) {
+	.mainscreen__currency_arrow {
+		margin: 35px 0;
+		flex-basis: 100%;
+	}
+	.mainscreen__currency_arrow-center {
+		margin: 0;
+		
+	}
+	.features__wrap {
+		flex-wrap: wrap;
+	}
+	.features__block {
+		flex-basis: 43%;
+	}
+	.features__text {
+		font-size: 16px;
+		line-height: 143%;
+	}
+	.features__title {
+		font-size: 18px;
+	}
+	.reserve__block {
+		width: 700px;
+	} 
+	.footer {
+		padding: 50px 0;
+	}
+	.footer__menu {
+		margin: 10px 0;
+	}
+	.footer__block {
+		flex-direction: column;
+		justify-content: center;
+	}
+	.footer__descr {
+		margin: 0;
+		text-align: center;
+	}
+}
+@media (max-width: 768px) {
+	.header__nav {
+		display: flex;
+		flex-direction: column;
+	}
+	.header__menu {
+		flex-basis: 100%;
+	}
+	.header__logo {
+		margin-bottom: 25px;
+	}
+	.mainscreen {
+		padding: 65px 0;
+	}
+	.mainscreen__title {
+		max-width: 75%;
+		font-size: 46px;
+		line-height: 61px;
+	}
+	.mainscreen__subtitle {
+		margin-bottom: 36px;
+	}
+	.mainscreen__currency {
+		padding: 55px;
+	}
+	.mainscreen__currency_give {
+		margin-bottom: 21px;
+	}
+	.button__exchange {
+		margin-top: 31px;
+	}
+	.features__block {
+		display: flex;
+		flex-basis: 100%;
+		text-align: center;
+	}
+	.features__image {
+		margin: 0 auto;
+
+	}
+	
+	.features__box {
+		flex-basis: 65%;
+	}
+	.reserve__title {
+		font-size: 30px;
+	}
+	.service__image {
+		display: none;
+	}
+	.service__text {
+    width: 100%;
+	}
+	.review__title {
+		font-size: 30px;
+		margin-bottom: 0;
+	}
+	.reserve {
+		padding: 100px 0 0px 0;
+	}
+	.end__title {
+    font-size: 22px;
+		line-height: 32px;
+	}
+	.end__image {
+		display: none;
+	}
+	.end__block {
+		flex-basis: 90%;
+		margin: auto;
+		padding: 50px 0;
+		text-align: center;
+	}
+
+}
+@media (max-width: 600px) {
+	.mainscreen__title {
+		font-size: 36px;
+		line-height: 46px;
+	}
+	.features {
+    padding: 48px 0 48px 0;
+	}
+	.features__img {
+		width: 70%;
+  }
+  
+	.reserve {
+		padding: 80px 0 80px 0;
+	}
+	.review__block:after {
+		display: none;
+	}
+	.end__image {
+		display: none;
+	}
+	.end__block {
+
+		margin: auto;
+	}
+	.service__title {
+		font-size: 32px;
+		line-height: 42px;
+	}
+	.owl-nav {
+		right: 38%;
+	}
+	
+}
+@media (max-width: 486px) {
+	.mainscreen__title {
+		font-size: 26px;
+		line-height: 42px;
+	}
+	.mainscreen__currency_sum {
+		margin-right: 3.5em;
+	}
+	.mainscreen__currency_arrow {
+		margin: 26px;
+	}
+	.footer__menu_link {
+		display: inline-block;
+		width: 45%;
+  }
+	.features__text {
+		font-size: 14px;
+		line-height: 139%;
+	}
+	.features__title {
+		font-size: 17px;
+  }
+	.service__title {
+		font-size: 26px;
+		line-height: 36px;
+		text-align: center;
+	}
+	
+	
+	.service__descr {
+
+		font-size: 15px;
+		line-height: 24px;
+		text-align: center;
+	}
+	.reserve__wrap {
+		justify-content: center;
+	}
+	.reserve {
+		padding: 38px 0 ;
+  }
+ 
+	.review {
+		padding: 40px 0;
+  }
+	.review__title {
+		font-size: 24px;
+
+	}
+	.review__subcribe {
+		font-size: 13px;
+	}
+	.review__data{
+		font-size: 11px;
+	} 
+	.review__title {
+		font-size: 22px;
+		width: 80%;
+		margin: 0 auto;
+		line-height: 29px;
+  }
+	.end__subscribe {
+		font-size: 15px;
+	}
+}
+@media (max-width: 400px)  {
+	.container {
+		max-width: 1200px;
+		width: 90%;
+		margin: 0 auto;
+		padding: 0 10px;
+	}
+	.header__logo {
+		display: block;
+		width: 173px;
+		height: 100%;
+		
+	}
+	.header__menu {
+		flex-direction: column;
+		display: flex;
+		align-items: center;
+		margin: 0;
+	}
+	.header__menu_link {
+		margin: 0;
+		margin-bottom: 20px;
+	}
+	.header__buttons {
+		flex-direction: column;
+		align-items: center;
+		margin: 0;
+	}
+	.button__entry {
+		margin-right: 0;
+	}
+	.mainscreen__currency {
+		padding-left: 17px;
+	}
+	.mainscreen__currency_sum {
+		margin-right: 1.5em;
+		font-size: 18px;
+	}
+	.mainscreen__currency_arrow {
+		margin: 26px;
+		flex-basis: 0;
+	}
+	.mainscreen__currency_button {
+		justify-content: flex-start;
+	}
+	.features__block {
+		flex-direction: column;
+	}
+	.end__box {
+		box-shadow: none;
+	}
+	.footer__logo {
+		margin-bottom: 0;
+	}
+	.service__title {
+		font-size: 24px;
+		line-height: 34px;
+  }
+  .service__descr {
+		font-size: 15px;
+		line-height: 22px;
+	}
+	.review__text {
+		font-weight: normal;
+		font-size: 15px;
+		line-height: 22px;
+		margin-bottom: 22px;
+		margin-top: 0;
+  }
+  .review__block {
+		padding: 22px;
+	}
+}

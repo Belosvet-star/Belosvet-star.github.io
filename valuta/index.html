@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Твой обменник</title>
+   <!-- <link rel="stylesheet" href="css/bootstrap-reboot.min.css"> -->
+   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap" rel="stylesheet">
+   <link rel="icon" href="img//favicon.ico" type="image/x-icon">
+   <link rel="stylesheet" href="css/owl.carousel.min.css">
+   <link rel="stylesheet" href="css/owl.theme.default.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+   <link rel="stylesheet" href="css/magnific-popup.css">
+   <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+   <div class="header">
+      <div class="container">
+         <nav class="header__nav">
+            <img src="img/logo.png" alt="logo" class="header__logo">
+            <div class="header__menu">
+               <a href="#" class="header__menu_link" id="main">Компания</a>
+               <a href="#" class="header__menu_link">Блог</a>
+               <a href="#" class="header__menu_link">Контакты</a>
+            </div>
+            <div class="header__buttons">
+               <a href='#form-login' class="button button__entry popup-with-form">Вход</a>
+               <a href="#form-popup" class="button button__registry popup-with-form">Регистрация</a>
+            </div>
+         </nav>
+      </div>
+   </div>
+
+   <div>
+      <form id="form-popup" class="white-popup mfp-hide">
+         <div id="wrapper">
+            <div id="successMessage">You've done it! Congratulations.</div>
+            
+            <div id="errorMessage"></div>
+
+            <h2 class="features__title">Зарегистрируйтесь,пожалуйста</h2>
+            <div class="form-element">
+               <label for="name" class="labelbox">Ваше имя</label>
+               <input id="name" class="inputbox" type="text" placeholder="Введите ваше имя" />
+            </div>
+            <div class="form-element">
+               <label for="email" class="labelbox">Ваш Email</label>
+               <input type="text" name="email" id="email1" class="inputbox" placeholder = "eg. yourname@gmail.com">
+            </div>
+            <div class="form-element">
+               <label for="phone" class="labelbox">Телефон</label>
+               <input type="text" name="phone" id="phone" class="inputbox" placeholder = "eg. 0123456789">
+            </div>
+           
+            <div class="form-element">
+               <label for="password" class="labelbox">Пароль</label>
+               <input type="password" name="password" class="inputbox" id="password1">
+            </div>
+           
+            <div class="form-element">
+               <label for="passwordConfirm" class="labelbox">Повтор пароля</label>
+               <input type="password" name="passwordConfirm" class="inputbox" id="passwordConfirm">
+            </div>
+           <div class="form-element">
+               <input type="submit" id="submitButton1" value="Отправить">
+           </div>
+
+         </div>
+      </form>
+      <form id="form-login" class="white-popup mfp-hide">
+         <div id="wrapper">
+            <div id="successMessage">You've done it! Congratulations.</div>
+            
+            <div id="errorMessage"></div>
+            <h2 class="features__title">Введите данные для входа</h2>
+
+            <div class="form-element">
+               <label for="email" class="labelbox">Ваш Email</label>
+               <input type="text" name="email" id="email2" class="inputbox" placeholder = "eg. yourname@gmail.com">
+            </div>
+           
+            <div class="form-element">
+               <label for="password" class="labelbox">Пароль</label>
+               <input type="password" name="password" class="inputbox" id="password2">
+            </div>
+           
+           <div class="form-element">
+               <input type="submit" id="submitButton2" value="Вход">
+           </div>
+
+         </div>
+      </form>
+   </div>
+   
+
+   <section class="mainscreen" >
+      <div class="mainscreen__decor1"></div>
+      <div class="mainscreen__decor2"></div>
+      
+      <div class="container">
+        
+         <h1 class="mainscreen__title wow animate__animated animate__backInLeft" data-wow-delay="1s">Мультивалютный обменный сервис 24/7</h1>
+         <p class="mainscreen__subtitle wow animate__animated animate__zoomIn" data-wow-delay="2s">Быстрый обмен без скрытых комиссий</p>
+         <div class="mainscreen__currency">
+            <div class="mainscreen__wrap">
+               <div class="mainscreen__currency_give">
+                  <div class="mainscreen__currency_title">Вы отдаете</div>
+                  <div class="mainscreen__currency_subtitle"></div>
+               </div>
+               <div class="mainscreen__currency_descr">Сумма</div>
+               <div class="mainscreen__currency_count">
+                  <div class="mainscreen__currency_sum">1000.00</div>
+                  <div class="mainscreen__currency_money">
+                     <div class="mainscreen__currency_icon">
+                        <img src="img/out.svg" alt="back">
+                     </div>
+
+                     <form class="mainscreen__currency_val">
+                        <select name="currency" class="mainscreen__currency_choice">
+                           <option value="rub" >руб</option>
+                           <option value="usd">долл</option>
+                           <option value="euro">евро</option>
+                           <option value="uah">грн</option>
+                        </select>
+                     </form>
+                  </div>
+               </div>
+
+            </div>
+            <div class="mainscreen__currency_arrow">
+               <img src="img/group.svg" alt="arrow" class="mainscreen__currency_arrow-center">
+            </div>
+            <div class="mainscreen__wrap">
+               <div class="mainscreen__currency_give">
+                  <div class="mainscreen__currency_title">Вы получаете</div>
+                  <div class="mainscreen__currency_subtitle">С учетом комисси ПC (2,5%)</div>
+               </div>
+               <div class="mainscreen__currency_descr">Сумма</div>
+               <div class="mainscreen__currency_count">
+                  <div class="mainscreen__currency_sum">980.00</div>
+                  <div class="mainscreen__currency_money">
+                     <div class="mainscreen__currency_icon">
+                        <img src="img/back.svg" alt="back">
+                     </div>
+                     <form class="mainscreen__currency_val">
+                        <select name="currency" class="mainscreen__currency_choice">
+                           <option value="rub" >руб</option>
+                           <option value="usd">долл</option>
+                           <option value="euro">евро</option>
+                           <option value="uah">грн</option>
+                        </select>
+                     </form>
+                  </div>
+               </div>
+            </div>
+            <div class="mainscreen__currency_button">
+               <a class="button button__exchange">Посчитать</a>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section class="features">
+      <div class="container">
+         <div class="features__wrap">
+            <div class="features__block">
+               <div class="features__image"><img src="img/icon1.png" alt="icon1" class="features__img"></div>
+               <div slass="features__box">
+                  <h2 class="features__title">Безопасность</h2>
+                  <p class="features__text">Усиленная безопасность ваших обменов, усиленная безопасность от мошенников!</p>
+               </div>
+            </div>
+            <div class="features__block">
+               <div class="features__image"><img src="img/icon3.png" alt="icon2" class="features__img"></div>
+               <div slass="features__box">
+                  <h2 class="features__title">Реферальная система</h2>
+                  <p class="features__text">На сервисе работает партнерская программа , за каждый обмен приведенного вами клиента, вы получаете 0.5% с нашей прибыли.</p>
+               </div>
+            </div>
+            <div class="features__block">
+               <div class="features__image"><img src="img/icon2.png" alt="icon3" class="features__img"></div>
+               <div slass="features__box">
+                  <h2 class="features__title">Онлайн поддержка</h2>
+                  <p class="features__text">Четыре вида поддержки для наших клиентов:  Телеграмм канал, E-mail поддержка, и мобильный номер (Viber).</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <div class="service"> 
+      <div class="container">
+         <div class="service__wrap">
+            <div class="service__text">
+               <h3 class="service__title">Сервис обмена электронных валют с 5-летней историей</h3>
+               <p class="service__descr">За время работы мы приобрели репутацию проверенного партнера и делаем все возможное, чтобы ваши впечатления от нашего сервиса были только благоприятными.</p>
+            </div>
+            <div class="service__image"> <img src="img/service-img.png" alt="servise img" ></div>
+         </div>
+      </div> 
+   </div>
+
+
+   <section class="reserve">
+      <div class="container">
+         <h3 class="reserve__title">Резерв валюты</h3>
+         <div class="reserve__wrap">
+            <div class="reserve__block">
+               <img src="img/icon-1.svg" alt="icon" class="reserve__icon">
+               <div class="reserve__text">
+                  <div class="reserve__descr">Yandex RUB</div>
+                  <div class="reserve__count">900549</div>
+               </div>
+            </div>
+            <div class="reserve__block">
+               <img src="img/icon-2.svg" alt="icon" class="reserve__icon">
+               <div class="reserve__text">
+                  <div class="reserve__descr">Ethereum ETH</div>
+                  <div class="reserve__count">123</div>
+               </div>
+            </div>
+            <div class="reserve__block">
+               <img src="img/icon-3.svg" alt="icon" class="reserve__icon">
+               <div class="reserve__text">
+                  <div class="reserve__descr">Bitcoin BTC</div>
+                  <div class="reserve__count">0.63333439</div>
+               </div>
+            </div>
+            <div class="reserve__block">
+               <img src="img/icon-4.svg" alt="icon" class="reserve__icon">
+               <div class="reserve__text">
+                  <div class="reserve__descr">Сбербанк  RUB</div>
+                  <div class="reserve__count">142666</div>
+               </div>
+            </div>
+            <div class="reserve__block">
+               <img src="img/icon-5.svg" alt="icon" class="reserve__icon">
+               <div class="reserve__text">
+                  <div class="reserve__descr">Приват 24 UAH</div>
+                  <div class="reserve__count">142666</div>
+               </div>
+            </div>
+            <div class="reserve__block">
+               <img src="img/icon-6.svg" alt="icon" class="reserve__icon">
+               <div class="reserve__text">
+                  <div class="reserve__descr">PayPal USD</div>
+                  <div class="reserve__count">5139.58</div>
+               </div>
+            </div>
+            <div class="reserve__block">
+               <img src="img/icon-7.svg" alt="icon" class="reserve__icon">
+               <div class="reserve__text">
+                  <div class="reserve__descr">PM USD</div>
+                  <div class="reserve__count">3192.22</div>
+               </div>
+            </div>
+            <div class="reserve__block">
+               <img src="img/icon-8.svg" alt="icon" class="reserve__icon">
+               <div class="reserve__text">
+                  <div class="reserve__descr">Qiwi RUB</div>
+                  <div class="reserve__count">99243.321</div>
+               </div>
+            </div>
+         </div>
+      </div>
+    
+   </section>
+
+
+   <section class="review">
+      <div class="container">
+         <h2 class="review__title">Что клиенты говорят о нас</h2>
+         
+         <div class="review__box">
+            <div class="owl-carousel ">
+               <div class="item review__block">
+                  <p class="review__text">Киви переправил деньги не на кошелек а на номер мтс будьте внимательны.даже в этом случаи делают возврат и переводят на приват.особая благодарность оператору Марии.</p>
+                  <div class="review__descr">
+                     <span class="review__subcribe">Jacob Robertson</span>
+                     <span class="review__data">20.02.2020, 12:10</span>
+                  </div>
+               </div>
+               <div class="item review__block">
+                  <p class="review__text">3-й раз выполняю обмен. все как всегда на отлично! транзакции выполняются в течение 15-20 мин. что очень быстро + лучший ценник!</p>
+                  <div class="review__descr">
+                     <p class="review__subcribe">Morris Robertson</p>
+                     <p class="review__data">17.02.2020, 18:51</p>
+                  </div>
+               </div>
+               <div class="item review__block">
+                  <p class="review__text">3-й раз выполняю обмен. все как всегда на отлично! транзакции выполняются в течение 15-20 мин. что очень быстро + лучший ценник!</p>
+                  <div class="review__descr">
+                     <p class="review__subcribe">Morris Robertson</p>
+                     <p class="review__data">20.02.2020, 12:10</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section class="end">
+      <div class="container">
+         <div class="end__box">
+            <div class="end__image"> </div>
+            <div class="end__block">
+               <h2 class="end__title wow animate__animated animate__fadeInRight" data-wow-delay="1.2s">Будем рады предоставить Вам качественный обмен валют на нашем сервисе!</h2>
+               <p class="end__subscribe wow animate__animated animate__flash" data-wow-delay="2.2s">Начните обмен прямо сейчас</p>
+               <a class="button__end">Начать обмен</a>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <footer class="footer">
+      <div class="container">
+         <div class="footer__block">
+            <a href="#main"><img src="img/logo.png" alt="logo" class="footer__logo"></a>
+            <div class="footer__menu">
+               <a href="#" class="footer__menu_link">Карта сайта</a>
+               <a href="#" class="footer__menu_link">Предупреждение</a>
+               <a href="#" class="footer__menu_link">Правила сайта</a>
+               <a href="#" class="footer__menu_link">Обмен</a>
+            </div>
+            <div class="footer__social">
+               <a href="#" class="footer__social_link"><img src="img/vk.png" alt="vk"></a>
+               <a href="#" class="footer__social_link"><img src="img/facebook.png" alt="fb"></a>
+               <a href="#" class="footer__social_link"><img src="img/instagram.png" alt="insta"></a>
+            </div>
+         </div>
+         <div class="footer__descr">Сервис обмена электронных валют</div>
+      </div>
+   </footer>
+
+
+
+   <script src="js/jquery.min.js"></script>
+   <script src="js/owl.carousel.min.js"></script>
+   <script src="js/wow.js"></script>
+   <script src="js/jquery.magnific-popup.min.js"></script>
+   <script src="js/main.js"></script>
+</body>
+</html>
+
+
