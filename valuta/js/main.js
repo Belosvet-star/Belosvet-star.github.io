@@ -19,6 +19,7 @@ $(document).ready(function(){
 
       }
    });
+
  });
 
  new WOW().init();
@@ -37,112 +38,49 @@ function isEmail(email) {
    
 }
 
-$("#submitButton1").click(function() {
-   
-   var errorMessage = "";
-   var fieldsMissing = "";
-   
-   if ($("#email1").val() == "") {
-       
-       fieldsMissing += "<br>Email";
-       
-   }
-   
-   if ($("#phone").val() == "") {
-       
-       fieldsMissing += "<br>Номер телефона";
-       
-   }
-   
-   if ($("#password1").val() == "") {
-       
-       fieldsMissing += "<br>Пароль";
-       
-   }
-   
-   if ($("#passwordConfirm").val() == "") {
-       
-       fieldsMissing += "<br>Подтверждение пароля";
-       
-   }
-   
-   if (fieldsMissing != "") {
-       
-       errorMessage += "<p>Следующие поля заполнены некорректно:" + fieldsMissing;
-       
-   }
-   
-   if (isEmail($("#email").val()) == false) {
-       
-       errorMessage += "<p>В email допущена ошибка</p>";
-       
-   }
-   
-   if ($.isNumeric($("#phone").val()) == false) {
-       
-       errorMessage += "<p>В номере телефона допускаются только цифры</p>"
-       
-   }
-   
-   if ($("#password").val() != $("#passwordConfirm").val()) {
-       
-       errorMessage += "<p>Ваш пароль не совпадает</p>";
-       
-   }
-   
-   if (errorMessage != "") {
-       
-       $("#errorMessage").html(errorMessage);
-       
-   } else {
-       
-       $("#successMessage").show();
-       $("#errorMessage").hide();
-       
-   }
-   
-});
-$("#submitButton2").click(function() {
-   
-   var errorMessage = "";
-   var fieldsMissing = "";
-   
-   if ($("#email2").val() == "") {
-       
-       fieldsMissing += "<br>Email";
-       
-   }
-   
-      
-   if ($("#password2").val() == "") {
-       
-       fieldsMissing += "<br>Пароль";
-       
-   }
-   
-   
-   if (fieldsMissing != "") {
-       
-       errorMessage += "<p>Следующие поля заполнены некорректно:" + fieldsMissing;
-       
-   }
-   
-   if (isEmail($("#email").val()) == false) {
-       
-       errorMessage += "<p>В email допущена ошибка</p>";
-       
-   }
- 
-  
-   if (errorMessage != "") {
-       
-       $("#errorMessage").html(errorMessage);
-       
-   } else {
-       
-       $("#successMessage").show();
-       $("#errorMessage").hide();
-       
-   }
-   
-});
+
+$(document).ready(function(){
+    $('#form-popup').validate({
+        rules: {
+            login: {
+                required: true,
+                minlength:3
+            },
+            email: {
+                required: true,
+                email: true
+            },
+
+        },
+        messages: {
+            login: {
+                required: "Поле 'Имя' обязательно к заполнению",
+                minlength: "Введите не менее 3-х символов в поле 'Имя'"
+            },
+            email: {
+                required: "Поле 'Email' обязательно к заполнению",
+                email: "Необходим формат адреса email" 
+            },
+
+        }
+    });
+    $('#form-login').validate({
+        rules: {
+            email: {
+                required: true,
+                email: true
+            },
+
+        },
+        messages: {
+            email: {
+                required: "Поле 'Email' обязательно к заполнению",
+                email: "Необходим формат адреса email" 
+            },
+
+        }
+    });
+}); 
+jQuery(function($){
+    $("#phone").mask("(999) 999-99-99");
+ });

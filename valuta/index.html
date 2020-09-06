@@ -32,62 +32,60 @@
    </div>
 
    <div>
-      <form id="form-popup" class="white-popup mfp-hide">
-         <div id="wrapper">
-            <div id="successMessage">You've done it! Congratulations.</div>
+      <form action="#"  id="form-popup" class="form white-popup mfp-hide" method="post">
+         <h2 class="title__form">Зарегистрируйтесь, пожалуйста</h2>
+         <div class="wrapper">
             
-            <div id="errorMessage"></div>
-
-            <h2 class="features__title">Зарегистрируйтесь,пожалуйста</h2>
             <div class="form-element">
-               <label for="name" class="labelbox">Ваше имя</label>
-               <input id="name" class="inputbox" type="text" placeholder="Введите ваше имя" />
+               <label  class="labelbox">Ваше имя</label>
+               <input id="name" class="inputbox" type="text" name="login" placeholder="Введите ваше имя" />
             </div>
             <div class="form-element">
-               <label for="email" class="labelbox">Ваш Email</label>
-               <input type="text" name="email" id="email1" class="inputbox" placeholder = "eg. yourname@gmail.com">
+               <label  class="labelbox">Ваш Email</label>
+               <input type="text" name="email" id="email1" class="inputbox" placeholder = "yourname@gmail.com">
             </div>
             <div class="form-element">
-               <label for="phone" class="labelbox">Телефон</label>
-               <input type="text" name="phone" id="phone" class="inputbox" placeholder = "eg. 0123456789">
+               <label  class="labelbox">Телефон</label>
+               <input type="text" name="phone" id="phone" class="inputbox" placeholder = "0991235467">
             </div>
            
             <div class="form-element">
-               <label for="password" class="labelbox">Пароль</label>
+               <label  class="labelbox">Пароль</label>
                <input type="password" name="password" class="inputbox" id="password1">
             </div>
            
             <div class="form-element">
-               <label for="passwordConfirm" class="labelbox">Повтор пароля</label>
+               <label  class="labelbox">Повтор пароля</label>
                <input type="password" name="passwordConfirm" class="inputbox" id="passwordConfirm">
             </div>
            <div class="form-element">
-               <input type="submit" id="submitButton1" value="Отправить">
+               <input type="submit" name="enter" id="submitButton1" value="Отправить">
            </div>
 
          </div>
       </form>
-      <form id="form-login" class="white-popup mfp-hide">
-         <div id="wrapper">
-            <div id="successMessage">You've done it! Congratulations.</div>
-            
-            <div id="errorMessage"></div>
-            <h2 class="features__title">Введите данные для входа</h2>
-
+      <form action="#" id="form-login" class="form white-popup mfp-hide" method="post">
+         <h2 class="title__form">Введите данные для входа</h2>
+         <div class="wrapper">
             <div class="form-element">
-               <label for="email" class="labelbox">Ваш Email</label>
-               <input type="text" name="email" id="email2" class="inputbox" placeholder = "eg. yourname@gmail.com">
+               <label class="labelbox">Ваш Email</label>
+               <input type="text" name="email" id="email2" class="inputbox" placeholder = "yourname@gmail.com">
             </div>
            
             <div class="form-element">
-               <label for="password" class="labelbox">Пароль</label>
+               <label class="labelbox">Пароль</label>
                <input type="password" name="password" class="inputbox" id="password2">
             </div>
            
            <div class="form-element">
-               <input type="submit" id="submitButton2" value="Вход">
+               <input type="submit" name="enter" id="submitButton2" value="Вход">
            </div>
 
+         </div>
+      </form>
+      <form action="#" id='form-thanks' class="form white-popup mfp-hide">
+         <div class="wrapper">
+            <h2 class="features__title">Спасибо! С вами свяжутся в ближайшее время</h2>
          </div>
       </form>
    </div>
@@ -165,21 +163,21 @@
          <div class="features__wrap">
             <div class="features__block">
                <div class="features__image"><img src="img/icon1.png" alt="icon1" class="features__img"></div>
-               <div slass="features__box">
+               <div class="features__box">
                   <h2 class="features__title">Безопасность</h2>
                   <p class="features__text">Усиленная безопасность ваших обменов, усиленная безопасность от мошенников!</p>
                </div>
             </div>
             <div class="features__block">
                <div class="features__image"><img src="img/icon3.png" alt="icon2" class="features__img"></div>
-               <div slass="features__box">
+               <div class="features__box">
                   <h2 class="features__title">Реферальная система</h2>
                   <p class="features__text">На сервисе работает партнерская программа , за каждый обмен приведенного вами клиента, вы получаете 0.5% с нашей прибыли.</p>
                </div>
             </div>
             <div class="features__block">
                <div class="features__image"><img src="img/icon2.png" alt="icon3" class="features__img"></div>
-               <div slass="features__box">
+               <div class="features__box">
                   <h2 class="features__title">Онлайн поддержка</h2>
                   <p class="features__text">Четыре вида поддержки для наших клиентов:  Телеграмм канал, E-mail поддержка, и мобильный номер (Viber).</p>
                </div>
@@ -305,7 +303,7 @@
             <div class="end__image"> </div>
             <div class="end__block">
                <h2 class="end__title wow animate__animated animate__fadeInRight" data-wow-delay="1.2s">Будем рады предоставить Вам качественный обмен валют на нашем сервисе!</h2>
-               <p class="end__subscribe wow animate__animated animate__flash" data-wow-delay="2.2s">Начните обмен прямо сейчас</p>
+               <p class="end__subscribe wow animate__animated animate__flash" data-wow-delay="2s">Начните обмен прямо сейчас</p>
                <a class="button__end">Начать обмен</a>
             </div>
          </div>
@@ -338,6 +336,8 @@
    <script src="js/owl.carousel.min.js"></script>
    <script src="js/wow.js"></script>
    <script src="js/jquery.magnific-popup.min.js"></script>
+   <script src="js/jquery.validate.min.js"></script>
+   <script src="js/jquery.maskedinput.min.js"></script>
    <script src="js/main.js"></script>
 </body>
 </html>
