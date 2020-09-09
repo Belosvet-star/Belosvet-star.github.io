@@ -50,6 +50,16 @@ $(document).ready(function(){
                 required: true,
                 email: true
             },
+            password: { 
+                required: true,
+                minlength: 6,
+                maxlength: 10,
+            },
+            passwordConfirm: { 
+                equalTo: "#password",
+                minlength: 6,
+                maxlength: 10,
+            }
 
         },
         messages: {
@@ -61,26 +71,78 @@ $(document).ready(function(){
                 required: "Поле 'Email' обязательно к заполнению",
                 email: "Необходим формат адреса email" 
             },
+            password: { 
+                required:"Введите пароль",
+                maxlength: "Символов не более 10",
+                minlength: "Введите не менее 6-и символов"
+            },
+            passwordConfirm: {
+                minlength: "Введите не менее 6-и символов",
+                maxlength: "Символов не более 10",
+                equalTo: "Не совпадает! Проверьте правильность набора",
+            },
+        },
 
-        }
     });
     $('#form-login').validate({
         rules: {
             email: {
-                required: true,
                 email: true
             },
 
         },
         messages: {
             email: {
-                required: "Поле 'Email' обязательно к заполнению",
                 email: "Необходим формат адреса email" 
             },
 
         }
     });
 }); 
+
 jQuery(function($){
     $("#phone").mask("(999) 999-99-99");
- });
+});
+
+$(document).ready(function(){
+        $('.mobile__menu').click(function() {
+            console.log ('клик по кнопке');
+            $(".mobile__menu").toggleClass("activity");
+            $('.header__menu').toggleClass("activity");
+            $('.header__buttons').toggleClass("activity");
+        });
+});
+
+// function resize() {
+//     var menu = $('.header__menu');
+//     var header = $('.header__fix');
+//     var widthHead = header.width();
+//         if (widthHead < 600) {
+//             menu.css({'display':'none'});
+//             header.addClass('mobile');
+//         } else {
+//             menu.css({'display':'flex'});
+//             header.removeClass('mobile');
+//     }
+// }
+// resize();
+
+// $(window).resize(function() {
+//     resize();
+// });
+
+// $('.header__hamburger').click(function(){
+//     element = $('.header__menu');
+//     display = element.css('display');
+//     if(display == 'none')
+//         $('.header__menu').slideDown(400);
+//     if(display == 'block')
+//         $('.header__menu').slideUp(400);
+// });
+
+// $('.header__menu_link').click(function(){
+//     var header = $('.header__fix');
+//     var widthHead = header.width();
+//     if(widthHead < 600)
+//         $('.header__menu').slideUp(400);
+// });
