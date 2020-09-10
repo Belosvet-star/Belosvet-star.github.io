@@ -108,8 +108,8 @@ $(document).ready(function(){
         $('.mobile__menu').click(function() {
             console.log ('клик по кнопке');
             $(".mobile__menu").toggleClass("activity");
-            $('.header__menu').toggleClass("activity");
-            $('.header__buttons').toggleClass("activity");
+            $('.header__menu_box').toggleClass("activity");
+            
         });
 });
 

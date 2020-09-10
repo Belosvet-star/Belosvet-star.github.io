@@ -171,7 +171,14 @@ body  {
 			
 		}
 		}
-}
+		&_box {
+			display: flex;
+			flex-basis: 60%;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+
 }
 .mainscreen {
 	padding: 113px 0 ;
@@ -742,7 +749,7 @@ input.error {
 .mobile__menu {
 	position: absolute;
 	top: 0;right: 0;
-	padding: 10px;
+	padding: 10px 27px 10px 10px;
 	text-decoration: none;
 	font-size: 30px;
 	display: none;
@@ -752,6 +759,9 @@ input.error {
 }
 
 .header__menu.activity {
+	display: flex;
+}
+.header__menu_box.activity {
 	display: flex;
 }
 .header__buttons.activity {

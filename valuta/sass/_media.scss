@@ -120,7 +120,9 @@
 		width: 100%;
 		text-align: center;
 	}
-	
+	.button__entry {
+		margin-left: 21px;
+	}
 	
 }
 @media (max-width: 888px) {
@@ -258,6 +260,12 @@
 	}
 }
 @media (max-width: 600px) {
+	.header__menu_box {
+    flex-basis: 100%;
+		flex-direction: column;
+		display: none;
+	}
+
 	.mainscreen__title {
 		font-size: 36px;
 		line-height: 46px;
@@ -302,7 +310,16 @@
 		width: 66%;
 		margin: 0 auto;
   }
-  
+  .mobile {
+		display: flex;
+	}
+	.mobile__menu {
+		display: none;
+	}
+	.mobile__menu.activity {
+		display: flex;
+	}
+	
 }
 @media (max-width: 486px) {
 	.header__logo {
@@ -398,6 +415,9 @@
 		align-items: center;
 		margin: 0;
 	}
+	.header__menu_box {
+		display: none;
+	}
 	.header__menu_link {
 		margin: 0;
 		margin-bottom: 20px;
@@ -406,9 +426,11 @@
 		flex-direction: column;
 		align-items: center;
 		margin: 0;
+		
 	}
 	.button__entry {
 		margin-right: 0;
+		margin-left: 0;
 	}
 	.mainscreen__currency {
 		padding-left: 17px;
@@ -452,32 +474,7 @@
 		padding: 22px;
 	}
 }
-@media (max-width: 399px) {
-	.mobile {
-		display: flex;
-	}
-	.mobile__menu {
-		display: none;
-	}
-	.mobile__menu.activity {
-		display: flex;
-	}
-	.header__menu {
-		display: none;
-	}
-	.header__buttons {
-		display: none;
-	}
-	// .header__nav {
 
-	// 	padding: 0;
-	// 	float: left; 
-	// 	width: 100%;
-	// 	overflow: hidden;
-	// 	height: 0;
-		
-	// }
-}
 @media (max-width: 320px) {
 	.inputbox {
 		padding: 9px 5px 9px 5px;
