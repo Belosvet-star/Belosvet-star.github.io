@@ -1,0 +1,503 @@
+@font-face {
+   font-family: "SFProDisplay-Regular";
+   src: local("SFProDisplay-Regular"),
+        url("../fonts/SFProDisplay-Regular.woff") format("woff"),
+        url("../fonts/SFProDisplay-Regular.woff2") format("woff2");
+   font-weight: normal;
+}
+@font-face {
+   font-family: "SFProDisplay-Semibold";
+   src: local("SFProDisplay-Semibold"),
+        url("../fonts/SFProDisplay-Semibold.woff") format("woff"),
+        url("../fonts/SFProDisplay-Semibold.woff2") format("woff2");
+   font-weight: bold;
+}
+
+*{
+   font-family: "SFProDisplay-Regular", sans-serif;
+   box-sizing: border-box;
+}
+body{
+   font-family: sans-serif;
+   background-color: #e5e5e5;
+}
+
+.header{
+   background: #FA8C16;
+   padding-top: 16px;
+   padding-bottom: 16px;
+   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+   margin-bottom: 30px;
+}
+.header-wrapper{
+   max-width: 1200px;
+   width: 90%;
+   margin: auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.header-nav{
+   margin-left: 60px;
+   margin-right: auto;
+}
+.header-menu{
+   display: flex;
+   list-style: none;
+   padding: 0;
+   margin: 0;
+}
+.header-menu-link{
+   text-decoration: none;
+   color: #FAFAFA;
+   margin-right: 15px;
+   font-size: 14px;
+   line-height: 22px;
+}
+.input-group{
+   max-width: 237px;
+   width: 60%;
+   height: 32px;
+   position: relative;
+   background: #fff;
+   border-radius: 4px;
+   overflow: hidden;
+   border: 1px solid #d9d9d9;
+
+}
+.search-input{
+   height: 100%;
+   width: 80%;
+   border: none;
+   font-size: 14px;
+   line-height: 22px;
+   padding-left: 12px;
+}
+.menu-toggle{
+   display: none;
+}
+.search-button{
+   height: 100%;
+   width: 20%;
+   border: none;
+   background-color: #fff;
+   position: absolute;
+   right: 0;
+   top: 0;
+   border: none;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.search-input::-moz-placeholder { color: #bfbfbf; /* Цвет подсказывающего текста */}
+.search-input::-webkit-input-placeholder { color: #bfbfbf; }
+.search-input:-ms-input-placeholder { color: #bfbfbf; }
+.search-input::-ms-input-placeholder { color: #bfbfbf; }
+.search-input::placeholder { color: #bfbfbf; } 
+
+
+ /* это сделано дл того, чтоб во всех браузерах поменять цвет, копировали это и поменяли чисто на наш класс и в html подставили type search */
+   /* input[type="search"]::-moz-placeholder {
+   color:/*  #ffd595; /* Цвет подсказывающего текста  }*/
+   
+   /* input[type="search"]::-webkit-input-placeholder { color: #ffd595; } */
+   /* input[type="search"]:-ms-input-placeholder { color: #ffd595; } */
+   /* input[type="search"]::-ms-input-placeholder { color: #ffd595; } */
+   /* input[type="search"]::placeholder { color: #ffd595; }  */  
+ 
+.content{
+   max-width: 1200px;
+   width: 90%;
+   margin: auto;
+   display: flex;
+   align-items: flex-start;
+   justify-content: space-between;
+}
+.posts{
+   width: 67%;
+}
+.post{
+   background-color: #fff;
+   border: 1px solid #e8e8e8;
+   margin-bottom: 30px;
+}
+.post-body{
+   padding: 35px 35px 0 35px;
+
+}
+.post-title{
+   font-family: "SFProDisplay-Semibold", sans-serif;
+   margin-top: 0;
+   margin-bottom: 19px;
+   font-weight: 600;
+   font-size: 16px;
+   line-height: 24px;
+   color: #262626;
+}
+.post-text{
+   font-weight: normal;
+   font-size: 14px;
+   line-height: 22px;
+   color: #262626;
+}
+.tags{
+   margin-bottom: 22px;
+}
+.tag{
+   font-style: normal;
+   font-weight: normal;
+   font-size: 14px;
+   line-height: 22px;
+   color: #BFBFBF;
+   margin-right: 10px;
+   text-decoration: none;
+   cursor: pointer;
+}
+.post-footer{
+   background: #FAFAFA;
+   border-top:  1px solid #E8E8E8;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 16px 16px;
+}
+.post-buttons{
+   display: flex;
+   align-items: center;
+}
+.post-button .icon{
+   fill: #8C8C8C;
+   
+}
+.post-button{
+   background-color: transparent;
+   border: none;
+   color: #8c8c8c;
+   display: flex;
+   align-items: center;
+   font-size: 14px;
+   line-height: 22px;
+   margin-right: 19px;
+   padding: 13px 35px;
+   cursor: pointer;
+}
+.author-avatar{
+   width: 34px;
+   height: 34px;
+   margin-left: 9px;
+   border-radius: 4px;
+}
+.post-author{
+   display: flex;
+   text-align: right;
+}
+.author-username{
+   display: block;
+   font-weight: normal;
+   font-size: 12px;
+   line-height: 20px;
+   color: #8C8C8C;
+   text-decoration: none;
+}
+.post-time{
+   font-weight: normal;
+   font-size: 12px;
+   line-height: 20px;
+   color: #BFBFBF;
+}
+.icon-likes, .icon-comments{
+   margin-right: 6px;
+}
+.sidebar{
+   width: 31%;
+}
+.user{
+   background-color: #fafafa;
+   border: 1px solid #e8e8e8;
+   padding: 15px 25px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+.user-info{
+   display: flex;
+   align-items: center;
+   text-decoration: none;
+}
+.user-avatar{
+   border-radius: 50%;
+   margin-right: 17px;
+}
+.user-name{
+   font-family: "SFProDisplay-Semibold", sans-serif;
+   font-weight: 600;
+   font-size: 16px;
+   line-height: 24px;
+   color: #595959;
+}
+.icon-exit{
+   width: 20px;
+   height: 20px;
+   fill: #000;
+}
+.sidebar-nav{
+   background-color: #fff;
+}
+.sidebar-menu{
+   margin: 0;
+   border: 1px solid #e8e8e8;
+   border-top: none;
+   list-style: none;
+   padding: 0;
+}
+.sidebar-menu-link{
+   text-decoration: none;
+   font-weight: normal;
+   font-size: 14px;
+   line-height: 22px;
+   color: #595959;
+   padding: 16px 48px;
+   display: inline-block;
+   width: 100%; /* это чтоб ссылка занимала все пространство в меню */
+}
+.sidebar-menu-link:hover{
+   background-color: #fffbe6;
+}
+.sidebar-menu-link.active{
+   background-color: #fffbe6;
+   border-right: 3px solid #faad14;
+   color:  #faad14;
+}
+.button{
+   background: #faad14;
+   border-radius: 4px;
+   text-decoration: none;
+   border: none;
+   color: #fff;
+   font-weight: normal;
+   font-size: 16px;
+   line-height: 24px;
+   color: #FFFFFF;
+   padding: 13px;
+   cursor: pointer;
+}
+.button-outline {
+   background: #FFFFFF;
+   border: 1px solid #FFC53D;
+   border-radius: 4px;
+   color: #FFC53D;
+   margin: 0 6px;
+   cursor: pointer;
+}
+.button-outline .icon{
+   width: 14px;
+   height: 11px;
+   fill: #FFC53D;
+}
+.button-new-post{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   margin-top: 20px;
+}
+.icon-fire{
+   fill: #fff;
+   width: 11px;
+   height: 13px;
+   margin-right: 10px;
+}
+.card{
+   background: #fff;
+   border: 1px solid #e8e8e8;
+   margin-top: 20px;
+
+}
+.card-header{
+   background: #fafafa;
+   border-bottom: 1px solid #e8e8e8;
+   padding: 23px 25px;
+}
+.card-title{
+   margin: 0;
+   font-family: "SFProDisplay-Semibold", sans-serif;
+   font-size: 16px;
+   line-height: 24px;
+   color: #595959;
+}
+.card-body{
+   padding: 22px 40px 20px 25px;
+}
+.card-body-title{
+   margin: 0 0 10px;
+   text-decoration: none;
+   font-family: "SFProDisplay-Semibold", sans-serif;
+   font-size: 16px;
+   line-height: 24px;
+   color: #D48806;
+}
+.card-text{
+   font-weight: normal;
+   font-size: 14px;
+   line-height: 22px;
+   color: #262626;
+   margin: 10px 0;
+}
+.promo{
+   display: block;
+   background: #fff url("../img/promo.jpg") no-repeat center / cover ;
+   width: 100%;
+   height: 260px;
+   border-bottom: 1px solid #e8e8e8;
+   margin-top: 20px;
+   position: relative;
+}
+.promo:before{
+   content: "Реклама";
+   position: absolute;
+   right: 0;
+   top: 0;
+   background: #C4C4C4;
+   padding: 0 26px;
+   font-weight: normal;
+   font-size: 12px;
+   line-height: 20px;
+   text-align: center;
+   color: #FFFFFF;
+}
+.add-post{
+   display: flex;
+   flex-direction: column;
+}
+.add-post .button{
+   margin-right: 20px;
+}
+.add-title, .add-text{
+   background: #FFFFFF;
+   border: 1px solid #E8E8E8;
+   padding: 23px 30px;
+   margin-bottom: 16px;
+}
+.add-text{
+   min-height: 362px;
+}
+.add-button{
+   width: 100%;
+   max-width: 370px;
+   margin-right: 2%;
+}
+.add-post .button-outline{
+   margin-right: 1%;
+}
+
+
+@media(max-width:990px){
+   .menu-toggle{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 20px;
+      margin-left: 12px;
+   }
+   .menu-toggle span{
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+   }
+   .header{
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      right: 0;
+      width: 100%;
+   }
+   .content{
+      margin-top: 94px;
+      margin-bottom: 60px;
+   }
+  
+   .sidebar{
+      z-index: 101;
+      position: fixed;
+      top: 64px;
+      right: 0;
+      bottom: 0;
+      height: calc(100% - 64px);
+      max-width: 320px;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 1px 1px 10px rgba(0, 0 ,0 , 0.15);
+      padding: 30px;
+      transform: translateX(100%);
+      transition: transform 0.2s;
+      overflow-y: auto;
+   }
+   .sidebar.visible{
+      display: block;
+      transform: translateX(0);
+   }
+   .posts{
+      width: 100%;
+   }
+   .header-nav{
+      display: none;
+   }
+  /*  .header-nav{
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #FA8C16;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      padding-left: 35px;
+      padding-right: 35px;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+      margin-left: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   } это длянижнего меню*/
+   .header-menu{
+      margin: auto;
+      width: 90%;
+   }
+}
+@media(max-width:676px){
+   .add-buttons{
+      display: flex;
+      flex-direction: column;
+   }
+   .add-button{
+      width: 100%;
+      max-width: 100%;
+   }
+   .add-post .button-outline{
+      margin: 0;
+      margin-top: 10px;
+   }
+}
+@media(max-width:576px){
+   .post-footer{
+      flex-direction: column;
+   }
+   .post-author{
+      margin-top: 15px;
+   }
+   .author-about{
+      order: 2;
+      text-align-last: left;
+   }
+   .author-avatar{
+      margin-left: 0;
+      margin-right: 10px;
+   }
+   
+   .add-button{
+      width: 100%;
+   }
+}
+
