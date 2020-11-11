@@ -336,7 +336,14 @@ function send(event, php){
   req.onerror = function() {alert("Ошибка отправки запроса");};
   req.send(new FormData(event.target));
   
-  }
+  };
+
+  $(window).on("load", function () {
+    var $preloader = $("#page-preloader"),
+      $spinner = $preloader.find(".spinner");
+    $spinner.fadeOut();
+    $preloader.delay(500).fadeOut("slow");
+  });
 
 
 
