@@ -3,4 +3,5 @@ $('.button-play').click(function(){
     $(this).css("display", "none");
    //$(this).fadeOut();
    $('.audio-box').css("display", "block");
+   $('.touch').css("display", "none");
 });
