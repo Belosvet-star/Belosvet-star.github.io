@@ -1,0 +1,425 @@
+
+@font-face {
+   font-family: 'Gotham Pro Light';
+   src: url('../fonts/GothamPro-Light.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+@font-face {
+   font-family: 'Gotham Pro Medium';
+   src: url('../fonts/GothamPro-Medium.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+@font-face {
+   font-family: 'Gotham Pro';
+   src: url('../fonts/GothamPro.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+*, *:after,*:before{
+   box-sizing: border-box;
+}
+body{
+   background-color: #292929;
+   color: #fff;
+   font-family: 'Gotham Pro', sans-serif;
+   margin: 0;
+}
+.header{
+   padding-top: 50px;
+}
+.text-color-red{
+   color: #ff3469;
+   font-family: 'Gotham Pro Medium';
+}
+.header-description{
+   font-family: 'Gotham Pro Light';
+   letter-spacing: 0.12px;
+   font-size: 12px;
+}
+.header-phone{
+   color: #fff;
+   text-decoration: none;
+   font-size: 20px;
+   text-align: right;
+   font-weight: 500;
+   display: block;
+}
+.header-info{
+   font-size: 12px;
+   font-weight: 400;
+   margin-top: 7px;
+   display: block;
+   text-align: right;
+}
+.callback{
+   color: #ff3469;
+   text-align: right;
+   display: block;
+   margin-top: 16px;
+   font-size: 16px;
+}
+.hero{
+   padding-top: 100px;
+   padding-bottom: 77px;
+   text-align: center;
+   border-bottom: 1px solid #4c4c4c;
+   
+}
+.hero-title{
+   margin: auto;
+   font-size: 34px;
+   margin-bottom: 34px;
+   text-transform: uppercase;
+   line-height: normal;
+   letter-spacing: 0.34px;
+   font-family: 'Gotham Pro Medium';
+   max-width: 692px;
+}
+.hero-description{
+   font-family: 'Gotham Pro Light';
+   font-size: 18px;
+   text-transform: uppercase;
+   letter-spacing: 0.18px;
+   line-height: 1.4;
+   max-width: 590px;
+   margin: auto;
+}
+.hero-cta{
+   display: block;
+   font-size: 19px;
+   text-transform: uppercase;
+   margin-bottom: 36px;
+   font-family: 'Gotham Pro Light';
+}
+.flower-slider{
+   width: 100%;
+   text-align: center;
+   margin-top: 87px;
+   margin-bottom: 83px;
+}
+:root {
+   --swiper-navigation-size: 18px;
+   color: #F24841;
+}
+/* это выдрали с инспектора кода, рут находить в кнопках лево-право, только рут меняет настройки  */
+
+.swiper-button-prev, .swiper-button-next {
+    color: #F24841;
+}
+.button{
+   display: inline-block;
+   font-size: 18px;
+   text-transform: uppercase;
+   text-decoration: none;
+   color: #fff;
+   background-color: #ff3469;
+   padding: 26px 65px;
+   margin-top: 36px;
+   cursor: pointer;
+   border: none;
+}
+.section-title{
+   text-align: center;
+   text-transform: uppercase;
+   font-size: 30px;
+   letter-spacing: 0.3px;
+
+}
+.rewies{
+   padding: 100px 0 50px 0;
+
+}
+.rewies-slide{
+
+   padding-left: 60px;
+   padding-right: 60px;
+}
+.rewies-slider{
+   margin-top: 90px;
+}
+.rewies-image{
+   width: 220px;
+   height: 220px;
+   flex-shrink: 0;
+   border-radius: 50%;
+   overflow: hidden;
+   font-size: 20px;
+   font-family: 'Gotham Pro Light';
+   position: relative;
+   margin-right: 50px;
+}
+.rewies-image-1{
+   background: url(../img/photo.jpeg);
+}
+.rewies-image-1:before{
+   content: '';
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.5);
+   position: absolute;
+}
+.rewies-image >  *{
+   position: relative;
+}
+.rewies-name{
+   margin-bottom: 7px;
+}
+
+.rewies-text{
+   font-size: 18px;
+   letter-spacing: 0.18px;
+   line-height: 1.4;
+   font-family: 'Gotham Pro Light';
+}
+.rewies-link{
+   color: #ff3469;
+
+   cursor: pointer;
+}
+.advant{
+   text-align: center;
+   padding: 50px 0 100px 0;
+   border-bottom: 1px solid #4c4c4c;
+}
+.advant-wrapper{
+   min-height: 85px;
+   margin-bottom: 30px;
+}
+.advant-title{
+   font-size: 20px;
+   text-transform: uppercase;
+   line-height: 1.4;
+   max-width: 270px;
+   margin: auto;
+}
+.goods{
+   padding: 100px 0;
+
+}
+.secyion-description{
+   font-size: 18px;
+   text-align: center;
+}
+.card{
+   text-align: center;
+   border: 3px solid #fff;
+   padding: 33px 35px 30px 35px;
+   margin-top: 27px;
+}
+.card-title{
+   margin: 23px 0 20px 0;
+   text-transform: uppercase;
+}
+.card-label{
+   font-size: 14px;
+   display: block;
+   margin-bottom: 7px;
+   margin-top: 20px;
+}
+.color-label{
+   width: 20px;
+   height: 20px;
+   cursor: pointer;
+  /*  background-color: red; для первоначальной настройки*/
+}
+.color-input{
+   opacity: 0;
+   visibility: hidden;
+   position: absolute;
+   z-index: -9;
+}
+.color-label.white{
+   background-color: #fff;
+}
+.color-label.biege{
+   background-color: rgb(243, 223, 179);
+}
+.color-label.pink{
+   background-color: rgb(250, 110, 173);
+}
+.color-label.red{
+   background-color: rgb(255, 0, 0);
+}
+.color-label.blue{
+   background-color: rgb(7, 100, 230);
+}
+.counter-input{
+   height: 40px;
+   width: 40px;
+   border: 2px solid #fff;
+   text-align: center;
+   color: #fff;
+   background-color: #292929;
+   margin: 0 15px;
+}
+.counter-button{
+   width: 40px;
+   height: 40px;
+   cursor: pointer;
+   font-size: 16px;
+   color: #fff;
+   background-color: #292929;
+   border: none;
+}
+.card-button{
+   font-size: 14px;
+   width: 100%;
+   padding: 16px 10px 12px 10px;
+}
+.more{
+   font-size: 14px;
+   color: #ff3469;
+   display: block;
+   text-align: center;
+   margin-top: 39px;
+   padding: 10px; /* чтоб попасть можно біло мішкой,слишком мелкое */
+}
+.more:after{
+   content: '';
+   display: inline-block;
+   width: 10px;
+   height: 4px;
+   background: url('../img/arrow-down.png') no-repeat center;
+   margin-left: 14px;
+   vertical-align: middle;
+}
+.offer{
+   padding: 100px 0;
+   background-color: #1a1a1a;
+   text-align: center;
+}
+.offer-link{
+   text-transform: uppercase;
+   text-decoration: none;
+   color: #fff;
+   display: block;
+   font-size: 30px;
+   margin-bottom: 65px;
+   
+}
+.offer-label{
+   display: block;
+   margin-bottom: 22px;
+   font-size: 14px;
+}
+.offer-phone{
+   font-size: 16px;
+   text-decoration: none;
+   color: #fff;
+}
+.footer-menu{
+   padding: 0;
+   margin: 0;
+   list-style: none;
+   margin-bottom: 33px;
+   text-transform: uppercase;
+}
+.footer-menu-link{
+   text-decoration: none;
+   color: #fff;
+   font-size: 18px;
+}
+.footer-menu-item{
+   margin-right: 30px;
+}
+.social{
+   font-size: 16px;
+}
+.footer-label{
+   display: block;
+   font-size: 14px;
+   margin-bottom: 12px;
+}
+.footer-info{
+   text-align: right;
+}
+.footer-phone{
+   text-decoration: none;
+   color: #fff;
+   font-size: 24px;
+   display: block;
+   margin-bottom: 12px;
+}
+.footer-down{
+   background-color: #fff;
+   padding: 50px 0;
+}
+.footer-description{
+   color: #101010;
+}
+.footer-down-info{
+   display: block;
+   color: #101010;
+   text-align: right;
+   font-size: 12px;
+   margin: 20px 0;
+}
+.text-red{
+   color: #ff3469;
+}
+.modal{
+   display: none;
+}
+.modal-title{
+   color: #292929;
+}
+.modal-input{
+   display: block;
+   width: 100%;
+   padding: 10px;
+   font-size: 18px;
+}
+.modal-button{
+   width: 100%;
+}
+
+@media (max-width: 768px) {
+   .header{
+      text-align: center;
+   }
+   .header-contacts{
+      text-align: center;
+   }
+   .hero{
+      padding-top: 50px;
+   }
+   .hero-title{
+      font-size: 24px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+   }
+   .hero-description{
+      font-size: 16px;
+      line-height: 1.6;
+   }
+   .button{
+      padding: 20px 40px;
+   }
+   .colors{
+      max-width: 200px;
+      margin: auto;
+   }
+   .card-label{
+      margin: 20px auto;
+      display: block;
+   }
+   .footer-info{
+      text-align-last: left;
+   }
+}
+@media (max-width: 576px){
+   .footer-info{
+      text-align-last: left;
+   }
+   .offer{
+      text-align-last: left;
+   }
+   .offer-title{
+      text-align-last: left;
+   }
+   .footer-down-info{
+      text-align-last: left;
+   }
+}
