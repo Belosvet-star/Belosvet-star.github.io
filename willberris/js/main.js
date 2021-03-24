@@ -182,3 +182,4 @@ showClothing.forEach(item => {
 		filterCards('category', 'Clothing');
 	});
 });
+
