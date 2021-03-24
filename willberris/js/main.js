@@ -1,3 +1,4 @@
+  
 const mySwiper = new Swiper('.swiper-container', {
 	loop: true,
 
@@ -38,7 +39,6 @@ modalCart.addEventListener('click', function(event) {
 
 /* (function(){
 	const scrollLinks = document.querySelectorAll('a.scroll-link');
-
 	for (let i = 0; i < scrollLinks.length; i++) {
 		scrollLinks[i].addEventListener('click', function(event){
 			event.preventDefault();
@@ -48,7 +48,6 @@ modalCart.addEventListener('click', function(event) {
 				block: 'start',
 			})
 			console.log(id);
-
 		});
 	}
 })() */
@@ -72,9 +71,13 @@ modalCart.addEventListener('click', function(event) {
 })()
 
 //goods товары
-const more = document.querySelector('.more');
-const navigationLink = document.querySelectorAll('.navigation-link');
+// const more = document.querySelector('.more');
 const longGoodsList = document.querySelector('.long-goods-list');
+const viewAll = document.querySelectorAll('.view-all');
+const navigationLink = document.querySelectorAll('.navigation-link:not(.view-all)');
+const showAcsessories = document.querySelectorAll('.show-acsessories');
+const showClothing = document.querySelectorAll('.show-clothing');
+
 
 //функци, кот будет получать товары с сервера. У нас этол папка db и обычно это файл json
 
@@ -98,24 +101,24 @@ const createCard = function (objCard) {
 	const card = document.createElement('div');
 	card.className = 'col-lg-3 col-sm-6'
 
+	const {label, name, img, description, id, price} = objCard; //деструктуризация
 
 	card.innerHTML = `
 		<div class="goods-card">
-			${objCard.label ?
-				'<span class="label">${objCard.label}</span>' :
+			${label ?
+				'<span class="label">${label}</span>' :
 				''}
 			<img
-				src="db/${objCard.img}"
-				alt="${objCard.name}"
+				src="db/${img}"
+				alt="${name}"
 				class="goods-image"
 			/>
-			<h3 class="goods-title">${objCard.name}</h3>
-			<p class="goods-description">${objCard.description}</p>
-			<button class="button goods-card-btn add-to-cart" data-id="${objCard.id}">
-				<span class="button-price">$${objCard.price}</span>
+			<h3 class="goods-title">${name}</h3>
+			<p class="goods-description">${description}</p>
+			<button class="button goods-card-btn add-to-cart" data-id="${id}">
+				<span class="button-price">$${price}</span>
 			</button>
 		</div>
-
 	`; //`` где ё это обратные кавычки - это шаблонныу строки, комментарии можно тут убрать
 
 	return card;
@@ -124,15 +127,23 @@ const createCard = function (objCard) {
 //показ этих карточек на странице
 const renderCards = function(data) {
 	longGoodsList.textContent = ''; 
-	const cards = data.map(createCard)
-	longGoodsList.append(...cards)
+	const cards = data.map(createCard);
+	longGoodsList.append(...cards);
 	document.body.classList.add('show-goods')
 };
 
-more.addEventListener('click', function(event){
+const ahowAll =  function(event){
 	event.preventDefault();
 	getGoods().then(renderCards);
+};
+viewAll.forEach(function(elem){
+	elem.addEventListener('click', function(event){
+		event.preventDefault();
+		getGoods().then(renderCards);
+	});
+
 });
+
 
 //фильтруем карточки по фенскому, мужсткому еще какому-то
 const filterCards = function(field, value){
@@ -150,10 +161,24 @@ navigationLink.forEach(function (link) {
 	link.addEventListener('click', function(event) {
 		event.preventDefault();
 		//console.log(link);
-		const field = link.dataset.field
+		const field = link.dataset.field;
 		const value = link.textContent;
 		//console.log(field, value);
-		filterCards(field, value)
+		filterCards(field, value);
 	})
 });
 
+
+showAcsessories.forEach(item => {
+	item.addEventListener('click', e => {
+		e.preventDefault();
+		filterCards('category', 'Accessories');
+	});
+});
+
+showClothing.forEach(item => {
+	item.addEventListener('click', e => {
+		e.preventDefault();
+		filterCards('category', 'Clothing');
+	});
+});
