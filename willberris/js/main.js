@@ -19,15 +19,25 @@ const navigationLink = document.querySelectorAll('.navigation-link:not(.view-all
 const showAcsessories = document.querySelectorAll('.show-acsessories');
 const showClothing = document.querySelectorAll('.show-clothing');
 
+const checkGoods = () => {
 
-const getGoods = async () => {
-	const result = await fetch('db/db.json'); //тут может быть урл адрес такого файла
-	//console.log(result);
-	if(!result.ok) {
-		throw 'ошибочка вышла:  ' + result.status
-	}
-	return await result.json();
+	const data = [];
+
+	return async () => {
+		//console.log(data);
+		if(data.length) return data;
+		const result = await fetch('db/db.json'); //тут может быть урл адрес такого файла
+		if (!result.ok) {
+				throw 'ошибочка вышла:  ' + result.status
+			}
+			data.push(...(await result.json())) ;
+
+			return data
+	};
 };
+
+const getGoods = checkGoods()
+
 
 const openModal = () => {
 	modalCart.classList.add('show');
@@ -81,32 +91,27 @@ modalCart.addEventListener('click', function(event) {
 
 //выводить карточки.
 //вначале их создаем
+
 const createCard = function (objCard) {
 	const card = document.createElement('div');
-	card.className = 'col-lg-3 col-sm-6'
-
-	const {label, name, img, description, id, price} = objCard; //деструктуризация
-
+	card.className = 'col-lg-3 col-sm-6';
+	const {label, img, name, description, id, price} = objCard;
 	card.innerHTML = `
-		<div class="goods-card">
-			${label ?
-				'<span class="label">${label}</span>' :
-				''}
-			<img
-				src="db/${img}"
-				alt="${name}"
-				class="goods-image"
-			/>
-			<h3 class="goods-title">${name}</h3>
-			<p class="goods-description">${description}</p>
-			<button class="button goods-card-btn add-to-cart" data-id="${id}">
-				<span class="button-price">$${price}</span>
-			</button>
-		</div>
-	`; //`` где ё это обратные кавычки - это шаблонныу строки, комментарии можно тут убрать
-
+	<div class="goods-card">
+	${label ? `<span class="label">${label}</span>` : ''}
+		<img src="db/${img}" alt="${name}" class="goods-image">
+		<h3 class="goods-title">${name}</h3>
+		<p class="goods-description">${description}</p>
+		<button class="button goods-card-btn add-to-cart" data-id="${id}">
+			<span class="button-price">$${price}</span>
+		</button>
+	</div>
+	`;
+	//`` где ё это обратные кавычки - это шаблонныу строки, комментарии можно тут убрать
 	return card;
-};
+}
+
+
 
 //показ этих карточек на странице
 const renderCards = function(data) {
@@ -165,6 +170,8 @@ showClothing.forEach(item => {
 // корзина в всплывающем окне по методике es6
 const cartTableGoods = document.querySelector('.cart-table__goods');
 const cardTableTotal = document.querySelector('.card-table__total');
+const cartCount = document.querySelector('.cart-count');
+const btnDanger = document.querySelector('.btn-danger');
 
 const cart = {
 	//cartGoods: [],
@@ -184,6 +191,16 @@ const cart = {
 			count: 5,
 		},
 	], */
+	countQuantity() {
+		cartCount.textContent = this.cartGoods.reduce((sum, item) => {
+			return sum + item.count
+		}, 0)
+	},
+	clearCart() {
+		this.cartGoods.length = 0;
+		this.countQuantity();
+		this.renderCart();
+	},
 	renderCart(){
 		cartTableGoods.textContent = '';
 		this.cartGoods.forEach(({id, name, price, count}) => {
@@ -222,6 +239,7 @@ const cart = {
 	deleteGood(id) {
 		this.cartGoods = this.cartGoods.filter(item => id !== item.id);
 		this.renderCart();
+		this.countQuantity()
 	},// эта строчка вместо foo(param){}
 	minusGood(id) {
 		for (const item of this.cartGoods) {
@@ -235,6 +253,7 @@ const cart = {
 			}
 		}
 		this.renderCart();
+		this.countQuantity()
 	},
 	plusGood(id) {
 		for(const item of this.cartGoods) {
@@ -244,6 +263,7 @@ const cart = {
 			}
 		}
 		this.renderCart();
+		this.countQuantity()
 	},
 	addCartGoogs(id){
 		const goodItem = this.cartGoods.find(item => item.id === id);
@@ -259,10 +279,16 @@ const cart = {
 					price,
 					count: 1
 				});
+				this.countQuantity()
 			});
 		}
 	},
 }
+
+btnDanger.addEventListener('click', () => {
+	cart.clearCart()
+})
+
 //cart.addCartGoogs('021');
 document.body.addEventListener('click', event => {
 	const addToCart = event.target.closest('.add-to-cart');
@@ -293,3 +319,23 @@ cartTableGoods.addEventListener('click', event => {
 	}
 	
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
