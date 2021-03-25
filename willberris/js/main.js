@@ -1,4 +1,3 @@
-  
 const mySwiper = new Swiper('.swiper-container', {
 	loop: true,
 
@@ -14,11 +13,27 @@ const mySwiper = new Swiper('.swiper-container', {
 const buttonCart = document.querySelector('.button-cart');
 const modalCart = document.querySelector('#modal-cart');
 const modalClose = document.querySelector('.modal-close');
+const longGoodsList = document.querySelector('.long-goods-list');
+const viewAll = document.querySelectorAll('.view-all');
+const navigationLink = document.querySelectorAll('.navigation-link:not(.view-all)');
+const showAcsessories = document.querySelectorAll('.show-acsessories');
+const showClothing = document.querySelectorAll('.show-clothing');
 
-const openModal = function(){
+
+const getGoods = async () => {
+	const result = await fetch('db/db.json'); //тут может быть урл адрес такого файла
+	//console.log(result);
+	if(!result.ok) {
+		throw 'ошибочка вышла:  ' + result.status
+	}
+	return await result.json();
+};
+
+const openModal = () => {
 	modalCart.classList.add('show');
+	cart.renderCart();
 }
-const closeModal = function(){
+const closeModal = () => {
 	modalCart.classList.remove('show');
 }
 
@@ -33,31 +48,17 @@ modalCart.addEventListener('click', function(event) {
 	}
 });
 
-//плавная прокрутка scrill smooth? по с тандарту быстро проскакивает
+//плавная прокрутка scroll smooth, по с тандарту быстро проскакивает
 //получим все ссылки у кот класс scrolllink
 
 
-/* (function(){
-	const scrollLinks = document.querySelectorAll('a.scroll-link');
-	for (let i = 0; i < scrollLinks.length; i++) {
-		scrollLinks[i].addEventListener('click', function(event){
-			event.preventDefault();
-			const id = scrollLinks[i].getAttribute('href');
-			document.querySelector(id).scrollIntoView({
-				behavior: 'smooth',
-				block: 'start',
-			})
-			console.log(id);
-		});
-	}
-})() */
 
 //это то же, что и выше, но по другому
 (function(){
 	const scrollLinks = document.querySelectorAll('a.scroll-link');
 
 	for (scrollLink of scrollLinks) {
-		scrollLink.addEventListener('click', function(event){
+		scrollLink.addEventListener('click', event => {
 			event.preventDefault();
 			const id = scrollLink.getAttribute('href');
 			document.querySelector(id).scrollIntoView({
@@ -71,29 +72,12 @@ modalCart.addEventListener('click', function(event) {
 })()
 
 //goods товары
-// const more = document.querySelector('.more');
-const longGoodsList = document.querySelector('.long-goods-list');
-const viewAll = document.querySelectorAll('.view-all');
-const navigationLink = document.querySelectorAll('.navigation-link:not(.view-all)');
-const showAcsessories = document.querySelectorAll('.show-acsessories');
-const showClothing = document.querySelectorAll('.show-clothing');
+
 
 
 //функци, кот будет получать товары с сервера. У нас этол папка db и обычно это файл json
 
-const getGoods = async function() {
-	const result = await fetch('db/db.json'); //тут может быть урл адрес такого файла
-	//console.log(result);
-	if(!result.ok) {
-		throw 'ошибочка вышла:  ' + result.status
-	}
-	return await result.json();
-};
 
-/* getGoods().then(function(data){
-	console.log(data)
-}); */
-//console.log(getGoods());
 
 //выводить карточки.
 //вначале их создаем
@@ -132,7 +116,7 @@ const renderCards = function(data) {
 	document.body.classList.add('show-goods')
 };
 
-const ahowAll =  function(event){
+const showAll =  event => {
 	event.preventDefault();
 	getGoods().then(renderCards);
 };
@@ -148,17 +132,12 @@ viewAll.forEach(function(elem){
 //фильтруем карточки по фенскому, мужсткому еще какому-то
 const filterCards = function(field, value){
 	getGoods()
-	.then(function (data) {
-		const filteredGoods = data.filter(function(good) {
-			return good[field] === value
-		});
-		return filteredGoods;
-	})
-	.then(renderCards);
+		.then(data => data.filter(good => good[field] === value	))
+		.then(renderCards);
 };
 
 navigationLink.forEach(function (link) {
-	link.addEventListener('click', function(event) {
+	link.addEventListener('click', event => {
 		event.preventDefault();
 		//console.log(link);
 		const field = link.dataset.field;
@@ -183,3 +162,134 @@ showClothing.forEach(item => {
 	});
 });
 
+// корзина в всплывающем окне по методике es6
+const cartTableGoods = document.querySelector('.cart-table__goods');
+const cardTableTotal = document.querySelector('.card-table__total');
+
+const cart = {
+	//cartGoods: [],
+	
+	cartGoods: [],
+	/* cartGoods: [
+		{
+			id: "099",
+			name: "часы",
+			price: 1000,
+			count: 1,
+		},
+		{
+			id: "0100",
+			name: "кеды какие-то",
+			price: 10,
+			count: 5,
+		},
+	], */
+	renderCart(){
+		cartTableGoods.textContent = '';
+		this.cartGoods.forEach(({id, name, price, count}) => {
+			const trGood = document.createElement('tr');
+			trGood.className = 'cart-item';
+			trGood.dataset.id = id;
+// это один вариант удаления с data-id
+			/* trGood.innerHTML = `
+				<td>${name}</td>
+				<td>${price}$</td>
+				<td><button class="cart-btn-minus" data-id="${id}">-</button></td>
+				<td>${count}</td>
+				<td><button class="cart-btn-plus" data-id="${id}">+</button></td>
+				<td>${price * count}$</td>
+				<td><button class="cart-btn-delete" data-id="${id}">x</button></td>
+			`;
+			cartTableGoods.append(trGood); */
+			trGood.innerHTML = `
+				<td>${name}</td>
+				<td>${price}$</td>
+				<td><button class="cart-btn-minus" >-</button></td>
+				<td>${count}</td>
+				<td><button class="cart-btn-plus" >+</button></td>
+				<td>${price * count}$</td>
+				<td><button class="cart-btn-delete" >x</button></td>
+			`;
+			cartTableGoods.append(trGood);
+		});
+
+		const totalPrice = this.cartGoods.reduce((sum, item) => {
+			return sum + (item.price * item.count);
+		}, 0);
+		cardTableTotal.textContent = totalPrice + '$'
+
+	},
+	deleteGood(id) {
+		this.cartGoods = this.cartGoods.filter(item => id !== item.id);
+		this.renderCart();
+	},// эта строчка вместо foo(param){}
+	minusGood(id) {
+		for (const item of this.cartGoods) {
+			if (item.id === id) {
+				if (item.count <= 1) {
+					this.deleteGood(id)
+				} else {
+					item.count--;
+				}
+				break;
+			}
+		}
+		this.renderCart();
+	},
+	plusGood(id) {
+		for(const item of this.cartGoods) {
+			if (item.id === id) {
+				item.count++;
+				break;
+			}
+		}
+		this.renderCart();
+	},
+	addCartGoogs(id){
+		const goodItem = this.cartGoods.find(item => item.id === id);
+		if (goodItem) {
+			this.plusGood(id);
+		} else {
+			getGoods()
+			.then(data => data.find(item => item.id === id))
+			.then(({id, name, price }) => {
+				this.cartGoods.push({
+					id,
+					name,
+					price,
+					count: 1
+				});
+			});
+		}
+	},
+}
+//cart.addCartGoogs('021');
+document.body.addEventListener('click', event => {
+	const addToCart = event.target.closest('.add-to-cart');
+	if (addToCart) {
+		cart.addCartGoogs(addToCart.dataset.id)
+	}
+})
+
+cartTableGoods.addEventListener('click', event => {
+	const target = event.target;
+
+	if(target.tagName === "BUTTON") {
+		const id = target.closest('.cart-item').dataset.id;
+
+		if (target.classList.contains('cart-btn-delete')) {
+		//cart.deleteGood(target.dataset.id); // это один вариант удаления с data-id
+		
+			cart.deleteGood(id);
+		};
+		if (target.classList.contains('cart-btn-minus')) {
+			
+			cart.minusGood(id);
+		};
+		if (target.classList.contains('cart-btn-plus')) {
+			
+			cart.plusGood(id);
+		};
+	}
+	
+})
