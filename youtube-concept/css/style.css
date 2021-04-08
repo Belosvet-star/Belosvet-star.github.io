@@ -13,6 +13,12 @@ body {
   display: flex;
   align-items: center;
   margin-bottom: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 99;
 }
 
 .logo {
@@ -102,6 +108,13 @@ body {
 
 .sidebar {
   padding-left: 32px;
+  position: fixed;
+  left: 0;
+  top: 114px;
+  width: 230px;
+  height: calc(100% - 114px);
+  overflow-y: auto;
+  background: #fff;
 }
 
 .nav-menu {
@@ -150,4 +163,128 @@ body {
   font-size: 18px;
   line-height: 23px;
   margin-bottom: 30px;
+}
+
+.content {
+  width: 100%;
+  height: 400px;
+  background-color: rgb(255, 255, 255);
+  margin-top: 85px;
+  padding-left: 298px;
+  padding-top: 30px;
+}
+
+.channel {
+  position: relative;
+  margin-bottom: 49px;
+}
+
+.channel-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.channel-title {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #19202c;
+  margin-bottom: 30px;
+}
+
+.channel-text {
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 33px;
+}
+
+.channel-sub {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #C2C2C2;
+  margin-left: 14px;
+}
+
+.video-card {
+  width: 250px;
+}
+
+.video-thumb {
+  width: 250px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 14px;
+  position: relative;
+}
+
+.thumbnail {
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.video-duration {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  mix-blend-mode: normal;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #fff;
+  padding: 3px 9px;
+}
+
+.video-title {
+  font-size: 16px;
+  line-height: 20px;
+  color: #19202C;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+.video-info {
+  display: flex;
+  font-size: 13px;
+  line-height: 16px;
+  color: #C2C2C2;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.video-views {
+  margin-right: 5px;
+}
+
+.video-counter {
+  display: flex;
+}
+
+.video-views:after {
+  content: '';
+  width: 2px;
+  height: 2px;
+  background-color: #C2C2C2;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.slider-buttons {
+  position: absolute;
+  right: 8%;
+  top: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 66px;
+}
+
+.channel-button {
+  cursor: pointer;
 }
