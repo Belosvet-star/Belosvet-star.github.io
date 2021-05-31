@@ -1,0 +1,20 @@
+.policy {
+  padding: 40px 50px;
+}
+
+.policy__title {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.policy p {
+  font-size: 16px;
+  margin-top: 22px;
+}
+
+.policy p span {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 9px;
+  display: inline-block;
+}

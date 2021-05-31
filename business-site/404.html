@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>404 error</title>
+    <link rel="stylesheet" href="css/libs.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/404.css" />
+    <link rel="stylesheet" href="css/media.css" />
+  </head>
+  <body>
+    <div class="site__wrapper">
+      <div class="container">
+        <header class="header__top">
+  <div class="header__logo" id="logo">
+    <a href="/"><img src="img/logo.png" alt="" class="header__logo-img" /></a>
+  </div>
+  <nav class="header__menu">
+    <ul class="menu__list" id="mylist">
+      <li class="menu__item">
+        <a class="item-active" href="/">Home</a>
+      </li>
+      <li class="menu__item">
+        <a class="item-inactive" href="/services.html" target="_blank"
+          >Services</a
+        >
+      </li>
+      <li class="menu__item">
+        <a class="item-inactive" href="#">Partners</a>
+      </li>
+      <li class="menu__item">
+        <a class="item-inactive" href="#">About Us</a>
+      </li>
+      <li class="menu__item">
+        <a href="#modal-form" class="popup-with-form">Contact Us</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="mobile__menu">
+    <a class="mobile__menu-trigger" href="#">☰</a>
+    <div class="mobile__popup">
+      <a class="mobile__menu-close" href="#">✖</a>
+      <ul class="mobile__list">
+        <li class="mobile__item">
+          <a class="item-active" href="/">Home</a>
+        </li>
+        <li class="mobile__item">
+          <a class="item-inactive" href="/services.html" target="_blank"
+            >Services</a
+          >
+        </li>
+        <li class="mobile__item">
+          <a class="item-inactive" href="#">Partners</a>
+        </li>
+        <li class="mobile__item">
+          <a class="item-inactive" href="#">About Us</a>
+        </li>
+        <li class="mobile__item">
+          <a href="#modal-form" class="popup-with-form">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+
+<section class="page-404">
+  <div class="error-img"><h1 class="error-text">Вашей страницы не сущестует</h1> <a class="error-link" href="index.html" class="title">Перейти на главную</a></div>
+  
+ 
+</section>
+
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__wrapper">
+      <div class="footer__menu">
+        <ul class="menu__list footer__list">
+          <li class="menu__item footer__item"><a class="item-active" href="/">Home</a></li>
+          <li class="menu__item footer__item"><a class="item-inactive" href="/services.html" target="_blank">Services</a></li>
+          <li class="menu__item footer__item"><a class="item-inactive" href="#">Partners</a></li>
+          <li class="menu__item footer__item"><a class="item-inactive" href="#">About Us</a></li>
+          <li class="menu__item footer__item"><a href="#modal-form" class="popup-with-form">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer__copyright">
+        <p class="footer__text">Copyright 2011-2012 Business Designz Ltd.</p>
+        <p class="footer__text">All Rights Reserved</p>
+      </div>
+    </div>
+  </div>
+    </footer>
+    <!-- form itself -->
+<div class="modal">
+  <div id="modal-form" class="white-popup mfp-hide">
+    <h3 class="modal__title">Напишите нас сообщение и мы вам ответим</h3>
+    <form action="#">
+      <div>
+        <input id="name" class="inputbox" type="text" placeholder="Ваше имя" />
+      </div>
+      <div>
+        <input
+          id="email"
+          class="inputbox"
+          type="email"
+          placeholder="Ваше e-mail"
+        />
+      </div>
+      <div>
+        <textarea
+          name="mess"
+          id="mess"
+          class="inputbox"
+          cols="30"
+          rows="10"
+          placeholder="Ваше сообщение"
+        ></textarea>
+      </div>
+      <div>
+        <input class="part__submit" type="submit" value="Отправить" />
+      </div>
+    </form>
+  </div>
+</div>
+
+ <script src="js/libs.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
