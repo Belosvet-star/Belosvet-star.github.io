@@ -1,6 +1,7 @@
 //МЕНЮ
-(function ($) { // Begin jQuery
+(function ($) { // Begin jQuery */
   $(function () { // DOM ready
+ 
     // If a link has a dropdown, add sub menu toggle.
     $('nav ul li a:not(:only-child)').click(function (e) {
       $(this).siblings('.nav-dropdown').toggle();
@@ -13,20 +14,66 @@
       $('.nav-dropdown').hide();
     });
     // Toggle open and close nav styles on click
-    $('#nav-toggle').click(function () {
+    $('#nav-toggle').click(function (e) {
+
       $('nav ul').slideToggle();
       $('.bod').toggleClass(' over');
       $('.navigation').toggleClass(' height');
+      e.preventDefault();
     });
     // Hamburger to X toggle
     $('#nav-toggle').on('click', function () {
-      this.classList.toggle('active');
+      this.classList.toggle('hamburger');
     });
   }); // end DOM ready
-})(jQuery); // end jQuery
+})(jQuery); // end jQuery  
 
-//INITIALIZE AOS
-AOS.init();
+//подсветка активного пункта меню при скролле - должен быть jquery
+jQuery(function ($) {
+  const section = $('.section'),
+    nav = $('.menu'),
+    navHeight = nav.outerHeight(); // получаем высоту навигации 
+  // поворот экрана 
+  window.addEventListener('orientationchange', function () {
+    navHeight = nav.outerHeight();
+  }, false);
+  $(window).on('scroll', function () {
+    const position = $(this).scrollTop();
+    section.each(function () {
+      const top = $(this).offset().top - navHeight - 5,
+        bottom = top + $(this).outerHeight();
+      if (position >= top && position <= bottom) {
+        nav.find('a').removeClass('shine');
+        section.removeClass('shine');
+        $(this).addClass('shine');
+        nav.find('a[href="#' + $(this).attr('id') + '"]').addClass('shine');
+      }
+    });
+  });
+  nav.find('a').on('click', function () {
+    const id = $(this).attr('href');
+    $('html, body').animate({
+      scrollTop: $(id).offset().top - navHeight
+    }, 487);
+    return false;
+  });
+});
+//смена фона липкого меню
+$(window).scroll(function () {
+  if ($(document).scrollTop() > 100) {
+    $(".navigation").addClass("animate");
+    $(".menu__link").addClass("animate");
+    $(".nav-mobile").addClass("animate");
+  } else {
+    $(".navigation").removeClass("animate");
+    $(".menu__link").removeClass("animate");
+    $(".nav-mobile").removeClass("animate");
+  }
+});
+
+
+new WOW().init();
+
 
 //swiper
 const swiper = new Swiper('.swiper-container', {
@@ -60,20 +107,32 @@ const myModal = new HystModal({
 //конец модального окна
 
 
-//прокрутка кнопка вверх
-$(document).ready(function () {
-  var btn = $('#button-up');
-
+//прокрутка кнопка вверх jquery
+ jQuery(($) => {
   $(window).scroll(function () {
-    if ($(window).scrollTop() > 500) {
-      btn.addClass('show');
+    if ($(this).scrollTop() > 780) $('.scrollup').fadeIn();
+    else $('.scrollup').fadeOut();
+  });
+  $('.scrollup').click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 566);
+    return false;
+  });
+}); 
+//прокрутка кнопка вверх ванильный js
+/* document.addEventListener('DOMContentLoaded', () => {
+  let toTopBtn = document.querySelector('.scrollup');
+  window.onscroll = function () {
+    if (window.pageYOffset > 580) {
+      toTopBtn.style.display = 'block'
     } else {
-      btn.removeClass('show');
+      toTopBtn.style.display = 'none'
     }
+  }
+  // плавный скролл наверх 
+  toTopBtn.addEventListener('click', function () {
+    window.scrollBy({
+      top: -document.documentElement.scrollHeight,
+      behavior: 'smooth'
+    });
   });
-
-  btn.on('click', function (e) {
-    e.preventDefault();
-    $('html, body').animate({ scrollTop: 0 }, '300');
-  });
-});
+}); */
