@@ -1,35 +1,33 @@
+AOS.init();
+
 //МЕНЮ
-(function ($) { // Begin jQuery */
-  $(function () { // DOM ready
- 
-    // If a link has a dropdown, add sub menu toggle.
-    $('nav ul li a:not(:only-child)').click(function (e) {
+(function ($) {
+  $(function () {
+    $('nav ul li > a:not(:only-child)').click(function (e) {
       $(this).siblings('.nav-dropdown').toggle();
-      // Close one dropdown when selecting another
       $('.nav-dropdown').not($(this).siblings()).hide();
       e.stopPropagation();
     });
-    // Clicking away from dropdown will remove the dropdown class
     $('html').click(function () {
       $('.nav-dropdown').hide();
     });
-    // Toggle open and close nav styles on click
-    $('#nav-toggle').click(function (e) {
+  });
+  document.querySelector('#nav-toggle').addEventListener('click', function () {
+    this.classList.toggle('height');
+  });
+  $('#nav-toggle').click(function (e) {
+    $('nav ul').toggle();
+    $('.bod').toggleClass('over');
+    $('.navigation').toggleClass('height');
+    e.preventDefault();
+  });
 
-      $('nav ul').slideToggle();
-      $('.bod').toggleClass(' over');
-      $('.navigation').toggleClass(' height');
-      e.preventDefault();
-    });
-    // Hamburger to X toggle
-    $('#nav-toggle').on('click', function () {
-      this.classList.toggle('hamburger');
-    });
-  }); // end DOM ready
-})(jQuery); // end jQuery  
-
+  $('#nav-toggle').on('click', function () {
+    this.classList.toggle('hamburger');
+  });
+})(jQuery);
 //подсветка активного пункта меню при скролле - должен быть jquery
-jQuery(function ($) {
+$(function () {
   const section = $('.section'),
     nav = $('.menu'),
     navHeight = nav.outerHeight(); // получаем высоту навигации 
@@ -50,16 +48,10 @@ jQuery(function ($) {
       }
     });
   });
-  nav.find('a').on('click', function () {
-    const id = $(this).attr('href');
-    $('html, body').animate({
-      scrollTop: $(id).offset().top - navHeight
-    }, 487);
-    return false;
-  });
 });
+
 //смена фона липкого меню
-$(window).scroll(function () {
+ $(window).scroll(function () {
   if ($(document).scrollTop() > 100) {
     $(".navigation").addClass("animate");
     $(".menu__link").addClass("animate");
@@ -69,10 +61,10 @@ $(window).scroll(function () {
     $(".menu__link").removeClass("animate");
     $(".nav-mobile").removeClass("animate");
   }
-});
+}); 
 
 
-new WOW().init();
+
 
 
 //swiper
@@ -84,7 +76,7 @@ const swiper = new Swiper('.swiper-container', {
     delay: 5000,
   }
 
-});
+}); 
 
 
 
@@ -103,12 +95,12 @@ const myModal = new HystModal({
     console.log('Message after modal has closed');
     console.log(modal); //modal window object
   },
-});
+}); 
 //конец модального окна
 
 
 //прокрутка кнопка вверх jquery
- jQuery(($) => {
+  jQuery(($) => {
   $(window).scroll(function () {
     if ($(this).scrollTop() > 780) $('.scrollup').fadeIn();
     else $('.scrollup').fadeOut();
@@ -117,7 +109,7 @@ const myModal = new HystModal({
     $("html, body").animate({ scrollTop: 0 }, 566);
     return false;
   });
-}); 
+});  
 //прокрутка кнопка вверх ванильный js
 /* document.addEventListener('DOMContentLoaded', () => {
   let toTopBtn = document.querySelector('.scrollup');
@@ -136,3 +128,4 @@ const myModal = new HystModal({
     });
   });
 }); */
+
