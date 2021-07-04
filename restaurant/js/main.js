@@ -1,4 +1,4 @@
-AOS.init();
+
 
 //МЕНЮ
 (function ($) {
@@ -63,15 +63,15 @@ $(function () {
   }
 }); 
 
+AOS.init();
 
-
-
+new WOW().init();
 
 //swiper
 const swiper = new Swiper('.swiper-container', {
   // Optional parameters
   loop: true,
-  speed: 500,
+  speed: 700,
   autoplay: {
     delay: 5000,
   }

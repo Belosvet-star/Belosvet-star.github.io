@@ -44,6 +44,13 @@
   }
 }
 
+@media (max-width: 930px) {
+  .order__item-number {
+    width: 98%;
+    height: 98%;
+  }
+}
+
 @media (max-width: 768px) {
   .stock__block {
     -webkit-box-orient: vertical;
