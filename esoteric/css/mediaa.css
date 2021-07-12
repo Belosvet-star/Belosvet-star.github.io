@@ -1,0 +1,58 @@
+@charset "UTF-8";
+/* === медиа запросы === */
+@media (max-width: 768px) {
+  .header__title {
+    padding: 0 15px;
+    padding-top: 50px;
+    margin: auto 0;
+    font-family: "YesevaOne", serif;
+    font-weight: 700;
+    font-size: 70px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .header-text__subscribe {
+    padding: 0 15px;
+    font-size: 22px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "YesevaOne", serif;
+  }
+  .header-text__text {
+    padding: 0 15px;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.1;
+  }
+  .header__subtitle {
+    padding: 0 15px;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .moons {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .pattern {
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 506px) {
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+  .header-text__block {
+    padding-top: 0;
+  }
+  .header__title {
+    margin-bottom: 40px;
+  }
+}
