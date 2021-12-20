@@ -1261,6 +1261,11 @@ h1 {
 }
 
 @media (max-width:531px) {
+  .promo{
+    height: auto;
+  }
+  
+
   .container {
     width: 320px
   }
