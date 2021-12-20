@@ -1,6 +1,6 @@
 const year = new Date().getFullYear();
 const fourthOfJuly = new Date(2022, 0, 1).getTime(); //какого-то фига месяц ставится на единицу меньше, то есть вместо 11 месяца ноябрь ставить 10 октябрь
-
+// новый год 01.01.2022 -  new Date(2022, 0, 1);
 // countdown
 let timer = setInterval(function() {
 
