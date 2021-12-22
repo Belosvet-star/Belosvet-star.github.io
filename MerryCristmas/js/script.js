@@ -1,7 +1,8 @@
-$('.button-play').click(function(){
+$('.button-play').click(function (e) {
+   e.preventDefault();
    console.log('нажато');
-    $(this).css("display", "none");
+    $('.button-play').css("display", "none");
    //$(this).fadeOut();
    $('.audio-box').css("display", "block");
-   $('.touch').css("display", "none");
+   $('.touch').css("color", "transparent");
 });
