@@ -8,6 +8,10 @@ color: var(--color1);
 /* *{
   outline: solid 1px red;
 }  */
+.wow {
+  visibility: hidden;
+}
+
 :root {
   --color1: #ffffff;
   /* главный цвет */
