@@ -5,6 +5,10 @@ background: url("../img/cover.jpg") 0 0 no-repeat;
 background-color: var(--color-bg1);
 color: var(--color1);
 */
+* {
+  outline: solid 1px red;
+}
+
 :root {
   --color1: #ffffff;
   /* главный цвет */
@@ -671,6 +675,7 @@ body.noscroll {
   flex-wrap: wrap;
   margin: -10px;
   align-items: stretch;
+  width: 100%;
 }
 
 .prefer-text__block {
@@ -1083,6 +1088,21 @@ body.noscroll {
   padding: 0;
 }
 
+html, body {
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: var(--color4);
+  background-color: var(--color-bg1);
+}
+
+body {
+  overflow-x: hidden;
+}
+
 a {
   display: inline-block;
   margin: 0;
@@ -1109,22 +1129,6 @@ p {
 
 img {
   max-width: 100%;
-}
-
-html, body {
-  height: 100%;
-  position: relative;
-  font-family: "Roboto", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-  color: var(--color4);
-  background-color: var(--color-bg1);
-}
-
-body {
-  overflow-x: hidden;
 }
 
 svg path {
