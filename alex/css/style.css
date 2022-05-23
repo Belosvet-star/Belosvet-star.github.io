@@ -5,10 +5,9 @@ background: url("../img/cover.jpg") 0 0 no-repeat;
 background-color: var(--color-bg1);
 color: var(--color1);
 */
-* {
+/* *{
   outline: solid 1px red;
-}
-
+}  */
 :root {
   --color1: #ffffff;
   /* главный цвет */
@@ -402,7 +401,7 @@ background-color: var(--color-bg1);
   }
 
   .main-menu li {
-    margin: 0 0 20px 0;
+    margin: 0 0 0px 0;
   }
 
   .main-menu li a:hover {
@@ -543,6 +542,7 @@ body.noscroll {
   font-size: calc(17px + 3 * ((100vw - 320px) / 880));
   width: 100%;
   max-width: 600px;
+  margin-bottom: 18px;
 }
 
 .home-descr__top {
