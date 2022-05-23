@@ -8,6 +8,12 @@ color: var(--color1);
 /* *{
   outline: solid 1px red;
 }  */
+@media screen and (max-width: 800px) {
+  .wow {
+    animation-name: none !important;
+    visibility: visible !important;
+  }
+}
 .wow {
   visibility: hidden;
 }
