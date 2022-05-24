@@ -30,15 +30,6 @@ if (document.body.clientWidth < 619) {
   swiperService.destroy();
 }
 
-// библиотека aos
-AOS.init({
-  /* disable: function () {
-    var maxWidth = 800;
-    return window.innerWidth < maxWidth;
-  } */
-  disable: 'phone'
-});
-
 
 jQuery(document).ready(function ($) {
   $('.popup-content').magnificPopup({
