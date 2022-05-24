@@ -52,6 +52,7 @@ body {
   padding: 0;
   color: var(--color4);
   background-color: var(--color-bg1);
+	overflow-y: auto;
 }
 
 body {
